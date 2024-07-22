@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+        <main>
+            <div class="hero">
+                <div class="logo">
+                    <img src="/static/images/TriplePines.svg" alt="Triple Pines Logo">
+                </div>
+            </div>
+        </main>
+        <section>
+            <form action="/course" method="post" class="dd-form">
+                <select name="course-dd" id="course-dd">
+                    {% for course in courses %}
+                    <option value="{{course.course_name}}">The {{course.course_name}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Choose Course">
+            </form>
+        </section>
+{% endblock %}

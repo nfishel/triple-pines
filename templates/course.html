@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<main>
+    <h2>The {{course}} Champoinship Course ⛳️</h2>
+    <table class="stats">
+        <tr>
+            <th>Hole</th>
+            {%for hole in holes%}
+            <td>{{hole.hole_number}}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <th>Par</th>
+            {%for hole in holes%}
+            <td>{{hole.par}}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <th>🔴 Red Tees(yrds)</th>
+            {%for hole in holes%}
+            <td>{{hole.red_tees}}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <th>🔵 Blue Tees(yrds)</th>
+            {%for hole in holes%}
+            <td>{{hole.blue_tees}}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            <th>⚫️ Black Tees(yrds)</th>
+            {%for hole in holes%}
+            <td>{{hole.black_tees}}</td>
+            {%endfor%}
+        </tr>
+    </table>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Hole</th>
+                <th>Par</th>
+                <th>Reds (yrds)</th>
+                <th>Blues (yrds)</th>
+                <th>Black (yrds)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hole in holes %}
+            <tr>
+                <td>{{hole.hole_number}}</td>
+                <td>{{hole.par}}</td>
+                <td>{{hole.red_tees}}</td>
+                <td>{{hole.blue_tees}}</td>
+                <td>{{hole.black_tees}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</main>
+{% endblock %}
