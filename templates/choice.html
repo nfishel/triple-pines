@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<main>
+    <h2>Choose a course to see the course details.</h2>
+    <div class="grid">
+        {% for c in courses %}
+        <a role="button" href="/course/{{c.course_name}}">The {{ c.course_name|title }}</a>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

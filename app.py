@@ -19,6 +19,10 @@ def details(course):
     holes = q.get_holes_by_course(course)
     return render_template("course.html", course=course, holes=holes)
 
+@app.route("/choice")
+def choice():
+    courses = q.get_unique_courses()
+    return render_template("choice.html", courses=courses)
 
 if __name__ == "__main__":
     app.run("0.0.0.0", port="80", debug=True)
